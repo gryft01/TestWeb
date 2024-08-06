@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交按钮示例</title>
+
+    <style>
+        /* 基本的页面样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* 按钮样式 */
+        #SettingCommit {
+            padding: 5px 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #SettingCommit:hover {
+            background-color: #0056b3;
+        }
+
+        /* 消息显示区域样式 */
+        #showMsg {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* 消息颜色变化 */
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="SettingCommit" onclick="func1()">保存设置</button>
+    <span id="showMsg"></span>
+    <script>
+        function func1() {
+            if (confirm("确认保存嘛？")) {
+                document.getElementById("showMsg").innerText = "已提交";
+                document.getElementById("showMsg").className = "success";
+            } else {
+                document.getElementById("showMsg").innerText = "已取消";
+                document.getElementById("showMsg").className = "error";
+            }
+        };
+    </script>
+</body>
+
+</html>
